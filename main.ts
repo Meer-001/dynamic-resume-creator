@@ -1,4 +1,6 @@
 // listing input elements
+// preventdefault is liye hota takay form submit hoty hway page reload na ho
+
 document.getElementById('resume')?.addEventListener('submit',function(event){
     event.preventDefault()
 
