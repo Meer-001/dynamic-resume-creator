@@ -5,6 +5,17 @@ body {
     background-color:#A4BCE9;
 
 }
+.h3-class{
+    text-align: end ;
+    color: #066490;
+}
+.h2-class1{
+    text-align: end;
+    color: #00457e;
+}
+.h2-class{
+    text-align: center;
+}
 
 h1 {
     text-align: center;
@@ -77,3 +88,18 @@ button:hover{
    #generatedOutput h2{
     color: #c4ccd9;
    }
+
+   css
+
+   .profilePicture {
+       display: block;
+       margin: 0 auto;
+       border: 2px solid #8ca0c4;
+       box-shadow: 0 4px 8px rgba(11, 7, 211, 0.5);
+       border-radius: 500%;
+       width: 150px;
+       height: 150px;
+       object-fit: cover;
+   
+   }
+   

@@ -4,6 +4,7 @@
 document.getElementById('resume')?.addEventListener('submit',function(event){
     event.preventDefault()
 
+    const profilePictureElement = document.getElementById('profilePicture') as HTMLInputElement
     const nameElement = document.getElementById('name') as HTMLInputElement
     const fNameElement = document.getElementById('fathername') as HTMLInputElement
     const emailElement = document.getElementById('email') as HTMLInputElement
@@ -15,7 +16,7 @@ document.getElementById('resume')?.addEventListener('submit',function(event){
 
     //creating output
 
-    if(nameElement && fNameElement && emailElement && contactElement && addressElement && educationElement &&experienceElement &&skillElement){
+    if(profilePictureElement && nameElement && fNameElement && emailElement && contactElement && addressElement && educationElement &&experienceElement &&skillElement){
         const name= nameElement.value
         const fName= fNameElement.value
         const email= emailElement.value
@@ -24,17 +25,20 @@ document.getElementById('resume')?.addEventListener('submit',function(event){
         const education= educationElement.value
         const experience= experienceElement.value
         const skill= skillElement.value
+        const profilePictureFile = profilePictureElement.files?.[0]
+        const profilePictureURL = profilePictureFile? URL.createObjectURL(profilePictureFile) :'';
     
 
-    const generatedOutput = `
-    <h2>My Resume </h2>
+    const generatedOutput= ` 
+    <h2>My Resume</h2>
+    ${profilePictureURL} ? '<img src ='${profilePictureURL} alt='Profile Picture' class='profilePicture'>':''}
     <p><strong> Name: </strong> ${name}</p>
     <p><strong> Father Name: </strong> ${fName}</p>
     <p><strong> Email address: </strong> ${email}</p>
     <p><strong> Contact Number: </strong> ${contact}</p>
     <p><strong> Address: </strong> ${address}</p>
-    <h3> Education:</h3> 
     
+    <h3> Education:</h3> 
     <p>${education}</p>
     <h3> Experience:</h3> 
     <p>${experience}</p>
